@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row align-content-center">
+      <a [routerLink]="['/createMovie']" href="#" class="btn btn-primary col-6">Create Movie</a>
+      <a [routerLink]="['/movieIMDB']" href="#" class="btn btn-primary  col-6">Create Movie IMDB</a>
+
+</div>
+<div class="flex-column col-12">
+<h1 class="display-1 text-center">Movies</h1>
+
+
+<div class="demo-card-container row">
+  <div class="card col-3 p-2"  *ngFor="let item of MovieList">
+    <img [src]="item.linkPoster1"
+    (error)="item.linkPoster1 = 'https://illustoon.com/photo/5005.png'"
+    class="card-img-top w-50 h-50" alt="...">
+
+    <div class="card-body row">
+      <div class="row">
+      <h5 class="card-title ">{{ item.title }}</h5>
+    </div>
+    <div class="row">
+      <a [routerLink]="['/details', item.id]" href="#" class="btn btn-primary m-1 ">Details</a>
+    </div>
+    <div class="row">
+      <a [routerLink]="['/editMovie', item.id]" href="#" class="btn btn-primary m-1 ">Edit</a>
+    </div>
+      <div class="row">
+      <button class="btn btn-primary m-1 " (click)="openModal(item.id)">DELETE</button>
+    </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>

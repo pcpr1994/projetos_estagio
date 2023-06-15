@@ -1,0 +1,51 @@
+<!-- src/app/features/home/home.component.html -->
+
+<ActionBar title="Movie" class="home">
+    <GridLayout columns="*,10, *,10"  marginTop="10"  >
+    <Button type="button"  column="0" class="Button.-primary buttHome" text="Create IMDB" [nsRouterLink]="['createIMDB']"></Button>
+    <Button type="button"  column="2" class="Button.-primary buttHome" text="Create Movie" [nsRouterLink]="['create']"></Button>
+</GridLayout>
+</ActionBar>
+<!-- [items]="movies" -->
+<ListView class="home" height ="100%"
+    separatorColor="white"
+    [items]="movieList"
+    (itemTap)="onFlickTap($event)">
+
+        <ng-template let-item="item" >
+            <GridLayout
+            height="280"
+
+            rows="*, *, *"
+            columns="*,60% "
+
+            class="bg-secondary"
+            borderRadius="10"
+            margin="10"
+            padding="5"
+            >
+            <Label
+            row="0"
+            column="0"
+            rows="0"
+            fontSize="20"
+            color="white"
+            textWrap="true"
+            [text]="item.title">
+
+            </Label>
+            <Image row="1" column="0" height="200" width="150" margin="2" stretch="aspectFill" [src]="item.linkPoster1"></Image>
+            <Label
+            row="0"
+            column="1"
+            fontSize="14"
+            textWrap="true"
+            color="white"
+            [text]=" item.rating"> Rating: {{item.rating}} / 10
+
+            </Label>
+            </GridLayout>
+        </ng-template>
+
+
+</ListView>

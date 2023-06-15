@@ -1,0 +1,101 @@
+/* @import '@nativescript/theme/css/core.css';
+@import '@nativescript/theme/css/default.css'; */
+/* @import "../node_modules/bootstrap/dist/css/bootstrap-grid.css"; */
+@import '../node_modules/bootstrap/dist/css/bootstrap-grid.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap-utilities.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+.Inicio {
+  background-color:  rgb(40, 37, 37);
+  color: white;
+  font-style: italic;
+
+}
+
+.DropDown {
+  color: white;
+  background-color:  rgb(40, 37, 37);
+}
+
+Button.-primary {
+  font-size: 18;
+}
+
+/* .imput {
+  color: white;
+  font-style: italic;
+
+} */
+
+.bg-secondary {
+  color: black;
+  background: transparent;
+  background-color: black;
+}
+
+.titleCreate {
+  color: rgb(32, 67, 67);
+  font-size: 18px;
+}
+
+.InputCreate {
+  font-size: 18px;
+
+}
+.create {
+  background-color:green;
+  color:white;
+  border-radius: 10%;
+
+}
+
+.cancel {
+  background-color: rgba(255, 0, 0, 0.821);
+  color: white;
+  border-radius: 10%;
+
+}
+
+.caixa{
+  background-color:rgb(95, 93, 93);
+  border-radius: 10%;
+}
+
+.detalhetitulo {
+  color: rgb(9, 150, 126);
+  font-size: 24px;
+  font-weight: bold;
+  /* text-align: center; */
+
+}
+
+.text {
+  background-color:  rgb(40, 37, 37);
+  color:  rgb(40, 37, 37);
+}
+
+.video-container {
+  height: 100%;
+  width: 100%;
+}
+.limitacao {
+  color: red;
+  background-color: rgb(7, 12, 12);
+}
+
+.etiquetas {
+  color: rgb(6, 144, 144);
+  font-size: 16px;
+}
+
+.home {
+  background-color: rgb(40, 37, 37);
+  color: white;
+  font-size: 18px;
+
+}
+
+.buttHome {
+  background-color: rgb(133,133,133);
+  border-radius: 10%;
+}

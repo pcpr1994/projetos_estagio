@@ -1,0 +1,65 @@
+<h1 class="display-1 text-center">Create Movies</h1>
+<div>
+  <a [routerLink]="['/createGenre']" href="#" class="btn btn-primary m-4 col-2">Create Genre</a>
+  <a [routerLink]="['/createAuthor']" href="#" class="btn btn-primary col-2 m-4">Create Author</a>
+</div>
+
+<div class="tab-content ng-star-inserted">
+<form class="ng-tns-c58-0 ng-pristine ng-valid ng-star-inserted ng-touched" (ngSubmit)="submitForm()" [formGroup]="form">
+<div class="card">
+  <div >
+  <div class="mb-3 form-group ng-tns-c58-0">
+    <label class="form-label ng-tns-c58-0" >Nome:</label>
+    <input class="form-control ng-tns-c58-0 " type="text" id="title" formControlName="title" name="title">
+  </div>
+
+  <div class="mb-3 form-group ng-tns-c58-0">
+    <label class="form-label ng-tns-c58-0">GENRE </label>
+    <select class="form-select" formControlName="genreid">
+      <option *ngFor="let genreL of genreGet" [value]= "genreL?.id">
+        {{genreL?.description}}
+      </option>
+    </select>
+  </div>
+
+  <div class="mb-3 form-group ng-tns-c58-0">
+    <label class="form-label ng-tns-c58-0" >AUTHOR </label>
+    <select class="form-select"  formControlName="authorid" >
+      <option *ngFor="let authorL of authorGet" value= {{authorL?.id}}  >
+        {{authorL?.name}}
+      </option>
+    </select>
+  </div>
+
+  <div class="mb-3 form-group ng-tns-c58-0">
+    <label class="form-label ng-tns-c58-0" >Date:</label>
+    <input class="form-control ng-tns-c58-0 " type="date" id="data" formControlName="releaseDate" name="releaseDate" >
+  </div>
+
+  <div class="mb-3 form-group ng-tns-c58-0">
+    <label class="form-label ng-tns-c58-0">Rating</label>
+    <input class="form-control ng-tns-c58-0 ng-pristine" type="number" id="rating" required formControlName="rating" name="rating" >
+
+  </div>
+
+  <div class="mb-3 form-group ng-tns-c58-0">
+    <label class="form-label ng-tns-c58-0">Price</label>
+    <input class="form-control ng-tns-c58-0 ng-pristine" type="number" id="price" required formControlName="price" name="price" >
+
+  </div>
+
+  <div class="mb-3 form-group ng-tns-c58-0">
+    <label class="form-label ng-tns-c58-0">Plot</label>
+    <input class="form-control ng-tns-c58-0 " type="txt" id="plot" formControlName="plot" name="plot" >
+  </div>
+
+  <div class="container">
+    <button class="btn btn-primary mx-2  " type="submit">Enviar</button>
+    <a [routerLink]="['/movie']" href="#" class="btn btn-primary">Back</a>
+  </div>
+</div>
+</div>
+</form>
+
+
+</div>

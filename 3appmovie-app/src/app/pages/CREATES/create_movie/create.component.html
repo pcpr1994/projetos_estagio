@@ -1,0 +1,71 @@
+<page class="Inicio" >
+<ActionBar class="Inicio"   title="Create Movie">
+    <GridLayout columns="auto,auto"  padding="0" marginTop="10"  >
+        <!-- para colocar as rotas para o create author e create genre -->
+        <Button type="button" column="0" class="Button.-primary buttHome" text="Create Genre" [nsRouterLink]="['createGenre']"></Button>
+        <Button type="button" column="1" class="Button.-primary buttHome" text="Create Author" [nsRouterLink]="['createAuthor']"></Button>
+    </GridLayout>
+
+
+
+</ActionBar>
+<!-- <ListPicker [items]="colors" [(ngModel)]="selectedColor"></ListPicker>
+<Label text="Choose a color:"></Label>
+        <ns-color-select></ns-color-select>
+        <Label [text]="'Selected color: ' + selectedColor"></Label> -->
+
+<GridLayout rows="auto,auto,auto,auto,auto,auto,auto,auto, auto" margin="10 10 10 20" >
+
+    <Text-field row="0" margin="10 0 10 0" class="caixa" #title hint="Title"></Text-field>
+
+        <Label margin="10 0 20 0" row="1">Genre:</Label>
+        <!-- (selectedIndexChanged)="onchangeGenre($event)"
+                  (opened)="onopenGenre()"
+                  (closed)="oncloseGenre()" -->
+        <DropDown class="caixa" margin="10 10 20 50"
+		  itemsTextAlignment="center"
+                  [items]="itemsGenre"
+                  [(ngModel)]="selectedIndexGenre"
+                  row="1"
+                  colSpan="2"></DropDown>
+    <!--     <Label text="Selected Index:"
+               row="1"
+               fontSize="18"
+               verticalAlignment="bottom"></Label> -->
+        <label margin="10 0 20 320" #genre [text]="selectedIndexGenre" class="text"
+                   row="1"></label>
+
+   <!--  <DropDown row="1" margin="10 10 10 10" row="1" [items]="options" [(ngModel)]="selectedOption"></DropDown> -->
+
+   <Label margin="10 0 20 0" row="2">Author:</Label>
+   <!-- (selectedIndexChanged)="onchangeAuthor($event)"
+    (opened)="onopenAuthor()"
+    (closed)="oncloseAuthor()" -->
+   <DropDown class="caixa" margin="10 10 20 60"
+    itemsTextAlignment="center"
+    [items]="itemsAuthor"
+    [(ngModel)]="selectedIndexAuthor"
+    row="2"
+    colSpan="2"></DropDown>
+
+    <label margin="10 0 20 320" #author [text]="selectedIndexAuthor" class="text"
+                   row="2"></label>
+
+    <label margin="10 0 20 0" row="3" >Realese Date:</label>
+    <DatePickerField class="caixa" margin="10 90 20 100" #date row="3" hint="select date"></DatePickerField>
+    <DatePickerFields class="caixa"  row="3" hintDate="select date" ></DatePickerFields>
+
+
+    <Text-field keyboardType="number" row="4" margin="0 190 10 0" class="caixa number" #rating hint="Rating"></Text-field>
+
+    <Text-field keyboardType="number" row="4" margin="0 10 10 190" class="caixa number" #price hint="Price"></Text-field>
+
+    <Text-field  row="6" margin="0 0 10 0" class="caixa" #plot hint="Plot"></Text-field>
+
+    <Button row="7" type="button" padding="0"  margin="30 180 0 0" class="Button.-primary create" text="Create"
+    (tap)="create(title.text, genre.text, author.text, date.text, rating.text, price.text, plot.text)"></Button>
+
+    <Button row="7" type="button" padding="0"  margin="30 0 0 180" class="cancel" text="Cancel" (tap)="cancel()"></Button>
+
+</GridLayout>
+</page>

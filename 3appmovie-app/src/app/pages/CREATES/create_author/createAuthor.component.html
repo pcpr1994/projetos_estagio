@@ -1,0 +1,25 @@
+<ActionBar alignContent="center" title="Create Author"></ActionBar>
+
+<GridLayout margin="50,20,20,10" rows="auto, auto, auto, auto" verticalAlignment="top">
+
+        <Label row="0" class="titleCreate font-italic font-weight-bold" margin="20 100 0 0">Name: </Label>
+        <Text-field row="0" class="InputCreate" margin="20 0 0 100" #author hint="author">     </Text-field>
+
+        <label margin="10 0 20 0" row="2" >Realese Date:</label>
+        <DatePickerField margin="10 90 20 100" #date row="2" hint="select date"></DatePickerField>
+        <DatePickerFields  row="2" hintDate="select date" ></DatePickerFields>
+
+
+        <Button row="3" type="button" padding="0"  margin="30 180 0 0" class="create" text="Create" (tap)="createAuthor(author.text, date.text)"></Button>
+        <Button row="3" type="button" padding="0"  margin="30 0 0 180" class="cancel" text="Cancel" (tap)="cancel()"></Button>
+
+</GridLayout>
+
+
+
+
+
+
+
+
+<!-- name e birthday -->

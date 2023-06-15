@@ -1,0 +1,14 @@
+<ActionBar title="Create IMDB"></ActionBar>
+
+<GridLayout margin="50,20,20,10" rows="auto, auto, auto, *" verticalAlignment="top">
+    <StackLayout>
+        <Label row="0" class="titleCreate font-italic font-weight-bold" margin="20 20 0 20">Insert the id of the movie </Label>
+        <Label class="titleCreate font-italic font-weight-bold" margin="0 20 0 20">    from the IMDB page </Label>
+        <Text-field row="1" class="InputCreate" margin="20 20 0 20" #idIMDB hint="ID">     </Text-field>
+    </StackLayout>
+        <Button row="2" type="button" padding="0"  margin="30 180 0 0" class="create" text="Create" (tap)="createIDIMDB(idIMDB.text)"></Button>
+        <Button row="2" type="button" padding="0"  margin="30 0 0 180" class="cancel" text="Cancel" (tap)="cancel()"></Button>
+
+
+
+</GridLayout>

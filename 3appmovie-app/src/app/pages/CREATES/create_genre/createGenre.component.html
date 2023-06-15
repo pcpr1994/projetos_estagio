@@ -1,0 +1,11 @@
+<ActionBar alignContent="center" title="Create Genre"></ActionBar>
+
+<GridLayout margin="50,20,20,10" rows="auto, auto, auto, *" verticalAlignment="top">
+
+        <Label row="0" class="titleCreate font-italic font-weight-bold" margin="20 100 0 0">Description: </Label>
+        <Text-field row="0" class="InputCreate" margin="20 0 0 120" #genre hint="genres">     </Text-field>
+
+        <Button row="1" type="button" padding="0"  margin="30 180 0 0" class="create" text="Create" (tap)="createGenre(genre.text)"></Button>
+        <Button row="1" type="button" padding="0"  margin="30 0 0 180" class="cancel" text="Cancel" (tap)="cancel()"></Button>
+
+</GridLayout>

@@ -1,0 +1,125 @@
+<h1 class="display-6 text-center">Edit Movies</h1>
+
+<div >
+  <form class="ng-tns-c58-0 ng-pristine ng-valid ng-star-inserted ng-touched" (ngSubmit)="submitForm()" [formGroup]="form">
+  <div >
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >Nome:</label>
+      <input class="form-control ng-tns-c58-0 " [(ngModel)]="movie.title" type="text" id="title" formControlName="title" name="title">
+    </div>
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0">GENRE </label>
+      <select class="form-select" [(ngModel)]="movie.genreid" formControlName="genreid">
+        <option *ngFor="let genreL of genre" [value]= "genreL?.id" >
+          {{genreL?.description}}
+        </option>
+      </select>
+    </div>
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >AUTHOR </label>
+      <select class="form-select" [(ngModel)]="movie.authorid" formControlName="authorid" >
+        <option *ngFor="let authorL of author" value= {{authorL?.id}}  >
+          {{authorL?.name}}
+        </option>
+      </select>
+    </div>
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >Date:</label>
+      <input class="form-control ng-tns-c58-0 " [(ngModel)]="movie.releaseDate" type="date" id="releaseDate" formControlName="releaseDate" name="releaseDate" >
+    </div>
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >Price:</label>
+      <input class="form-control ng-tns-c58-0 " [(ngModel)]="movie.price" type="number" id="price" formControlName="price" name="price">
+    </div>
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >Rating:</label>
+      <input class="form-control ng-tns-c58-0 " [(ngModel)]="movie.rating" type="number" id="rating" formControlName="rating" name="rating">
+    </div>
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >Time Minutes:</label>
+      <input class="form-control ng-tns-c58-0 " [(ngModel)]="movie.runtimeMins" type="number" id="runtimeMins" formControlName="runtimeMins" name="runtimeMins">
+    </div>
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >Plot:</label>
+      <textarea class="form-control ng-tns-c58-0 " [(ngModel)]="movie.plot" type="text" id="plot" formControlName="plot" name="plot">
+      </textarea>
+    </div>
+
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >Writers:</label>
+      <input class="form-control ng-tns-c58-0 " [(ngModel)]="movie.writers" type="text" id="writers" formControlName="writers" name="writers">
+    </div>
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >Stars:</label>
+      <input class="form-control ng-tns-c58-0 " [(ngModel)]="movie.stars" type="text" id="stars" formControlName="stars" name="stars">
+    </div>
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >Countries:</label>
+      <input class="form-control ng-tns-c58-0 " [(ngModel)]="movie.countries" type="text" id="countries" formControlName="countries" name="countries">
+    </div>
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >Languages:</label>
+      <input class="form-control ng-tns-c58-0 " [(ngModel)]="movie.languages" type="text" id="languages" formControlName="languages" name="languages">
+    </div>
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >IdImdb:</label>
+      <input class="form-control ng-tns-c58-0 " [(ngModel)]="movie.idImdb" type="text" id="idImdb" formControlName="idImdb" name="idImdb">
+    </div>
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >Awards:</label>
+      <input class="form-control ng-tns-c58-0 " [(ngModel)]="movie.awards" type="text" id="awards" formControlName="awards" name="awards">
+    </div>
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >Link do Trailer:</label>
+      <input class="form-control ng-tns-c58-0 " [(ngModel)]="movie.linkEmbed" type="text" id="linkEmbed" formControlName="linkEmbed" name="linkEmbed">
+    </div>
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >Description Trailer:</label>
+      <textarea class="form-control ng-tns-c58-0 " [(ngModel)]="movie.videoDescription" type="text" id="videoDescription" formControlName="videoDescription" name="videoDescription">
+      </textarea>
+    </div>
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >Link do Poster1:</label>
+      <input class="form-control ng-tns-c58-0 " [(ngModel)]="movie.linkPoster1" type="text" id="linkPoster1" formControlName="linkPoster1" name="linkPoster1">
+    </div>
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >Link do Poster2:</label>
+      <input class="form-control ng-tns-c58-0 " [(ngModel)]="movie.linkPoster2" type="text" id="linkPoster2" formControlName="linkPoster2" name="linkPoster2">
+    </div>
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >Link do Image1:</label>
+      <input class="form-control ng-tns-c58-0 " [(ngModel)]="movie.image1" type="text" id="image1" formControlName="image1" name="image1">
+    </div>
+
+    <div class="mb-3 form-group ng-tns-c58-0">
+      <label class="form-label ng-tns-c58-0" >Link do Image2:</label>
+      <input class="form-control ng-tns-c58-0 " [(ngModel)]="movie.image2" type="text" id="image2" formControlName="image2" name="image2">
+    </div>
+
+    <div class="container">
+      <button class="btn btn-primary mx-2  " type="submit">Enviar</button>
+      <a [routerLink]="['/movie']" href="#" class="btn btn-primary">Back</a>
+    </div>
+
+  </div>
+  </form>
+</div>

@@ -1,0 +1,101 @@
+<!-- <p class="body">details works!</p> -->
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body class="body">
+        <p class="imdb">IdImdb: {{ movie?.idImdb }}</p>
+
+        <h1 class="display-1">{{ movie?.title }}</h1>
+       <!--  col-md-auto -->
+<div class="container" padding-top="30rem" margin="30 0 0 0">
+  <div class="row ">
+    <div class="col-3">
+      <p>Rating: {{ movie?.rating }}</p>
+    </div>
+    <div class="col-3">
+      <p>Time: {{ movie?.runtimeMins }} m </p>
+    </div>
+    <div class="col-3">
+      <p>Date: {{ movie?.releaseDate | date }} </p>
+    </div>
+    <div class="col-3">
+      <p>Countries: {{ movie?.countries }} </p>
+    </div>
+  </div>
+</div>
+
+<div class="container" margin="30 0 0 0">
+  <div class="row ">
+    <div class="col-3">
+      <p>Languages: {{ movie?.languages }}</p>
+    </div>
+    <div class="col-3">
+      <p>Genre: {{ movie?.genreDescription }} </p>
+    </div>
+    <div class="col-3">
+      <p>Director: {{ movie?.authorName }} </p>
+    </div>
+    <div class="col-3">
+      <p>Writers: {{ movie?.writers }} </p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+  <img class="col-3" [src]="movie?.linkPoster1"
+    (error)="movie.linkPoster1 = 'https://illustoon.com/photo/5005.png'">
+  <iframe class="col-9" [src]="videoUrl()">
+  </iframe>
+  </div>
+</div>
+
+<div class="margin"></div>
+
+<div class="container-fluid" margin="3rem">
+  <div class="row">
+    <p class="col-2"></p>
+    <label class="col-6" >Description Trailer</label>
+    <div class="row">
+    <p class="col-2"></p>
+    <p class="col">{{ movie?.videoDescription }}</p>
+    <p class="col-2"></p>
+  </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <img class="col-6" [src]="movie?.image1"
+    (error)="movie.linkPoster1 = 'https://illustoon.com/photo/5005.png'">
+    <img class="col-6" [src]="movie?.image2"
+    (error)="movie.linkPoster1 = 'https://illustoon.com/photo/5005.png'">
+
+  </div>
+</div>
+
+<div class="margin"></div>
+
+<div class="container-fluid" >
+    <div class="row">
+    <p class="col-2"></p>
+    <p class="col">{{ movie?.plot }}</p>
+    <p class="col-2"></p>
+  </div>
+
+</div>
+
+
+
+
+
+<div class="margin"></div>
+<a [routerLink]="['/movie']" href="#" class="btn btn-primary">Back</a>
+
+</body>

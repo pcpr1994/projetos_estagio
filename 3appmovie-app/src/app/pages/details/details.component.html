@@ -1,0 +1,107 @@
+<page class="Inicio">
+<!-- actionbar -->
+<ActionBar class="Inicio" [title]="movieId?.title">
+  <GridLayout columns="auto,auto"  padding="0" marginTop="10"  >
+    <Button type="button" column="0" class="Button.-primary buttHome" (itemTap)="onFlickTap($event)" text="Edit" [nsRouterLink]="['editMovie']"></Button>
+    <Button type="button" column="1" class="Button.-primary buttHome" text="Delete" [nsRouterLink]="['details/:id/delete']"></Button>
+</GridLayout>
+</ActionBar>
+
+<ScrollView height="100%">
+
+<GridLayout padding="5" margin="5" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto">
+
+    <StackLayout row="0" rows='auto, auto' columns="*, *,*">
+      <label row="0" textWrap="true"  class="detalhetitulo"  [text]="movieId?.title"></label>
+
+    </StackLayout>
+<GridLayout row="1" rows='auto' columns="auto, auto, auto">
+    <Label text="Cast" row="0" col="0" >Time:</Label>
+      <label row="0" col="1" textWrap="true" [text]="movieId?.runtimeMins"> </label>
+      <Label text="Cast" row="0" col="2"> min</Label>
+</GridLayout>
+    <!-- hero image -->
+  <StackLayout row="2" rows="auto, auto, auto" >
+    <WebView padding="0" row="0" height="250"  src="{{movieId?.linkEmbed}}?width=100" #webView></WebView>
+    <!-- <Image row="0"   stretch="aspectFill" height="300" width="200" [src]="movieId?.linkPoster1"></Image> -->
+
+    <Label padding="5" row="1" margin="5 0 5 0" textWrap="true" [text]=" movieId?.plot"></Label>
+
+
+    <!-- <label class="limitacao" row="2" col="0"></label> -->
+
+  </StackLayout>
+
+  <GridLayout row="3" rows="auto">
+
+    </GridLayout>
+
+<!--   <GridLayout [carousel]="images" carouselLabelOverlay="true" carouselSpeed="2000">
+
+  </GridLayout> -->
+
+
+<GridLayout row="4" columns="*, *" rows="*, auto, auto">
+  <Label  row="0" class="etiquetas" col="0">Countries:</Label>
+  <label  textWrap="true" col="0" row="1" alignContent="center"  [text]="movieId?.countries"></label>
+
+  <Label  row="0" class="etiquetas" col="1">Language:</Label>
+  <label  textWrap="true" col="1" row="1" alignContent="center"  [text]="movieId?.languages"> </label>
+
+  <label class="limitacao" row="2" col="1"></label>
+  <label class="limitacao" row="2" col="0"></label>
+
+</GridLayout>
+<GridLayout margin="5 0 5 0" row="5" columns="*, *" rows="auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto">
+  <Label row="0" class="etiquetas" col="0">Author: </Label>
+  <label padding="5" col="0" row="1" textWrap="true"  [text]="movieId?.authorName"></label>
+
+ <Label row="0" class="etiquetas" col="1">Genre: </Label>
+  <label padding="5" col="1" row="1" textWrap="true" [text]="movieId?.genreDescription"></label>
+
+  <label class="limitacao" row="2" col="1"></label>
+  <label class="limitacao" row="2" col="0"></label>
+  <Label row="3" class="etiquetas" col="0">Writers: </Label>
+  <label row="4" col="0" textWrap="true" [text]="movieId?.writers"></label>
+
+  <Label row="3" class="etiquetas" col="1">Stars: </Label>
+  <label row="4" col="1" textWrap="true" [text]="movieId?.stars"></label>
+
+  <label class="limitacao" row="5" col="0"></label>
+  <label class="limitacao" row="5" col="1"></label>
+  <Label row="6" class="etiquetas" col="0">Release: </Label>
+  <label row="7" col="0" textWrap="true" [text]="movieId?.releaseDate"></label>
+
+  <Label row="6" class="etiquetas" col="1">Awards: </Label>
+  <label row="7" col="1" textWrap="true" [text]="movieId?.awards"></label>
+
+  <label class="limitacao" row="8" col="0"></label>
+  <label class="limitacao" row="8" col="1"></label>
+</GridLayout>
+
+
+<GridLayout row="7"  rows="auto,auto">
+  <Image row="0" alignContent="center"  height="200" width="280"  [src]="movieId?.image1"></Image>
+  <Image row="1"  alignContent="center"  height="200" width="280"  [src]="movieId?.image2"></Image>
+
+</GridLayout>
+
+
+
+<!--   <WebView row="0" [src]="movieId?.linkEmbed"  ></WebView  > -->
+<!-- <GridLayout row="8" rows="auto,auto,auto" *ngIf="movieId">
+  <label row="0">trailer</label>
+  <label row="1" textWrap="true">{{trustVideoUrl}}</label>
+  <WebView padding="0" row="2" height="250"  src="{{movieId?.linkEmbed}}?width=100" #webView></WebView>
+</GridLayout> -->
+
+
+
+<!-- <GridLayout [carousel]="images" carouselLabelOverlay="true" carouselSpeed="2000">
+
+</GridLayout> -->
+
+</GridLayout>
+
+</ScrollView>
+</page>
