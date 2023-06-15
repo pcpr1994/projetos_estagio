@@ -1,0 +1,42 @@
+<!-- src/app/features/home/home.component.html -->
+
+<ActionBar title="NativeFlix"></ActionBar>
+
+<ListView height="100%" 
+    separatorColor="transparent" 
+    [items]="flicks"
+    (itemTap)="onFlickTap($event)">
+    <ng-template let-item="item">
+        <GridLayout
+        height="280"
+        rows="auto, auto"
+        columns="*, *"
+        class="bg-secondary"
+        borderRadius="10"
+        margin="10"
+        padding="5"
+      >
+      <Label
+          row="0"
+          column="0"
+          margin="10"
+          fontWeight="700"
+          class="text-primary"
+          fontSize="18"
+          [text]="item.title"
+        ></Label>
+        <Label
+          row="1"
+          column="0"
+          margin="5"
+          class="text-secondary"
+          fontSize="14"
+          textWrap="true"
+          [text]="item.description"
+        ></Label>
+         <Image row="0,1" column="1" margin="2" stretch="aspectFill" [src]="item.image"></Image>
+
+
+      </GridLayout>
+    </ng-template>
+  </ListView>
